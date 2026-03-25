@@ -530,17 +530,14 @@
 
   <div class="value-grid">
     <div class="value-card">
-      <div class="value-num">01</div>
       <h3 class="value-heading">An Evening Curated for You</h3>
       <p class="value-body">Private screening of an award-winning film, paired with premium drinks and a dinner reception. Every detail chosen with our VIP clients in mind — because you've earned more than a thank-you email.</p>
     </div>
     <div class="value-card">
-      <div class="value-num">02</div>
       <h3 class="value-heading">Access to Our Leadership Team</h3>
       <p class="value-body">An unscripted evening with the founders and senior advisors behind Acquire. Ask questions, share ideas, and connect in a setting that's built for real conversation — not a conference agenda.</p>
     </div>
     <div class="value-card">
-      <div class="value-num">03</div>
       <h3 class="value-heading">First Look at What's Next</h3>
       <p class="value-body">Our VIP clients get the first glimpse of our 2025 product roadmap — including new R&D programs, expanded credit categories, and tools we're building specifically based on your feedback.</p>
     </div>
@@ -621,22 +618,7 @@
   </div>
 </section>
 
-<!-- TECH NOTE (visible to reviewer) -->
-<section style="padding: 4rem 1.5rem; max-width: 860px; margin: 0 auto; border-top: 0.5px solid rgba(201,168,76,0.15);">
-  <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#C9A84C; margin-bottom:1.25rem;">Technical Logic — Data & Attribution</p>
-  <p style="font-size:0.85rem; color:#6B6560; line-height:1.9; margin-bottom:1rem;">
-    <strong style="color:#FAF8F3; font-weight:500;">Fields captured:</strong> First Name, Last Name, Email, Company, Phone, Guest Count, Dietary Restrictions, Submission Timestamp, and UTM parameters (source, medium, campaign).
-  </p>
-  <p style="font-size:0.85rem; color:#6B6560; line-height:1.9; margin-bottom:1rem;">
-    <strong style="color:#FAF8F3; font-weight:500;">Data flow:</strong> On submission, form data is posted to a serverless endpoint (e.g. Make/Zapier webhook or direct API call) that writes a record to HubSpot CRM — appending lead source, campaign tag, and device type before writing to the contacts database. A confirmation email triggers via HubSpot Workflows or a transactional provider like Postmark.
-  </p>
-  <p style="font-size:0.85rem; color:#6B6560; line-height:1.9; margin-bottom:1rem;">
-    <strong style="color:#FAF8F3; font-weight:500;">Source attribution:</strong> The page URL accepts <code style="color:#C9A84C; font-size:0.8rem;">?utm_source=email&utm_medium=email&utm_campaign=vip_movie_2025</code> parameters. On load, JavaScript reads these params and passes them as hidden fields in the submission payload — so every record in the database is tagged with how the user arrived (Email, SMS, Direct Mail, or Direct). This surfaces in HubSpot as a custom property and in GA4 as a conversion event.
-  </p>
-  <p style="font-size:0.85rem; color:#6B6560; line-height:1.9;">
-    <strong style="color:#FAF8F3; font-weight:500;">Tools of choice:</strong> Landing page hosted on Webflow (no-code, fast, mobile-first). Form submissions via native Webflow form → Zapier → HubSpot CRM. UTM tracking via GA4 + a custom HubSpot property. SMS traffic tracked by appending <code style="color:#C9A84C; font-size:0.8rem;">utm_medium=sms</code> to the shortened link in the text blast. Direct Mail tracked via a unique vanity URL (e.g. <code style="color:#C9A84C; font-size:0.8rem;">acquire.com/vip</code>) with <code style="color:#C9A84C; font-size:0.8rem;">utm_medium=direct-mail</code> pre-appended.
-  </p>
-</section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -699,3 +681,6 @@
 </script>
 </body>
 </html>
+
+
+
